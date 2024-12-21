@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ea6fc1,#f6ceeb); /* تدريج من البرتقالي إلى الأصفر */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+/* صندوق تسجيل الدخول */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background:rgba(255, 255, 255, 0.1); /* خلفية مظللة مع شفافية */
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.login-box h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color:#fff; /* تغيير اللون إلى الأصفر الفاتح */
+}
+
+.login-box p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #eee; /* تغيير اللون إلى درجة أغمق من الأبيض */
+}
+
+/* تنسيق النموذج */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input {
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.8); /* خلفية حقل الإدخال شفافة */
+    color: #333;
+}
+
+input::placeholder {
+    color: #999; /* تغيير لون النص داخل الحقول */
+}
+
+button {
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #4e00b8; /* تدريج لوني بين البرتقالي والأصفر */
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background:#6200ea; /* تغييره عند التمرير */
+    transform: scale(1.05);
+}
+
+/* رابط تسجيل الحساب */
+form p {
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+form p a {
+    color: #eee; /* جعل الرابط باللون الأصفر */
+    text-decoration: none;
+}
+
+form p a:hover {
+    text-decoration:underline;
+}

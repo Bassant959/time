@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+{% load static %}  <!-- تحميل مكتبة static -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب</title>
+    <link rel="stylesheet" href="{% static 'core/signup.css' %}">  <!-- ربط ملف CSS -->
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-box">
+            <h1>إنشاء حسابك</h1>
+            <p>قم بملء التفاصيل للتسجيل</p>
+
+            <!-- عرض الرسائل هنا -->
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            <form method="POST"> <!-- تأكد من أن طريقة الطلب هي POST -->
+                {% csrf_token %}
+                {{ form.as_p }}  <!-- عرض الحقول بشكل تلقائي -->
+                <button type="submit">إنشاء الحساب</button>
+                <p>هل لديك حساب؟ <a href="{% url 'login' %}">تسجيل الدخول</a></p> <!-- رابط يوجه إلى صفحة تسجيل الدخول -->
+            </form>
+        </div>
+    </div>
+</body>
+</html>

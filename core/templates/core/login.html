@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+{% load static %}  <!-- تحميل مكتبة static -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+    <link rel="stylesheet" href="{% static 'core/login.css' %}">  <!-- ربط ملف CSS -->
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>!مرحباً بعودتك</h1>
+            <p>يرجى تسجيل الدخول إلى حسابك</p>
+            
+            <!-- عرض الرسائل هنا -->
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            
+            <!-- تعديل النموذج ليستخدم Django Form -->
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}  <!-- عرض الحقول بشكل تلقائي -->
+                <button type="submit">تسجيل الدخول</button>
+                <p>ليس لديك حساب؟ <a href="{% url 'signup' %}">اشترك الآن</a></p>  <!-- تأكد من أن رابط الاشتراك صحيح -->
+            </form>
+        </div>
+    </div>
+</body>
+</html>
